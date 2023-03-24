@@ -1,0 +1,48 @@
+---
+title: "Delete a Single Row"
+api: "DELETE https://www.trybaseplate.io/api/datasets/{id}/rows/{rowId}"
+description:
+  "Deletes the row from the dataset. Returns an empty response on success."
+---
+
+### Path Parameters
+
+<ParamField path="id" required>
+  Dataset ID
+</ParamField>
+
+<ParamField path="row-id" required>
+  Row ID. Can be found the metadata.
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+<ParamField path="Content-Type" required>
+  Use application/json
+</ParamField>
+
+### Responses
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+{}
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>

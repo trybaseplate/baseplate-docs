@@ -1,0 +1,62 @@
+---
+title: "🔍 Search"
+description: "Manually search your dataset"
+api: "POST https://www.trybaseplate.io/api/datasets/{id}/search"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string">
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="query" type="string">
+  Query string
+</ParamField>
+
+<ParamField body="top_k" type="number">
+  Number of closest matches
+</ParamField>
+
+<ParamField body="filter" type="object">
+  Metadata filter
+</ParamField>
+
+<ParamField body="alpha" type="number" defualt="0.5">
+  Alpha value for hybrid search.
+</ParamField>
+
+### Responses
+
+<Tab title="🟢 200: OK" >
+
+```json
+{
+  "results": [
+    {
+      "embedding": "a search warrant at Defendant Pebbles Jean- Paul’s",
+      "data": {
+        "text": "a search warrant at Defendant Pebbles Jean- Paul’s",
+        "author": "Andrew Luo"
+      },
+      "confidence": 0.76768893,
+      "query": "hello",
+      "metadata": {
+        "rowId": 208422,
+        "state": "ark",
+        "url": "/973179d1-2edd-49f9-aa3e-32785bb3fa01/data.txt"
+      }
+    }
+  ]
+}
+```
+
+</Tab>

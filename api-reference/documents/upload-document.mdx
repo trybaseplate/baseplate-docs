@@ -1,0 +1,47 @@
+---
+title: "Upload a Document (file) to a Dataset"
+api: "POST https://www.trybaseplate.io/api/datasets/{id}/upload"
+description: "Upload a document directly and specify chunk size and overlap"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Body
+
+<ParamField body="chunk_size" type="number">
+  Chunk size to chunk documents. Defaults to 1000 characters.
+</ParamField>
+
+<ParamField body="chunk_overlap" type="number" default="150 characters">
+  Overlap size for chunks.
+</ParamField>
+
+<ParamField body="file" type="file" required>
+  Attach a file to the request form-data.
+</ParamField>
+
+<ParamField body="document-id" type="string" required>
+  The document ID to create for this file.
+</ParamField>
+
+### Responses
+
+<Tab title="🟢 200: OK">
+
+```json
+{
+  "body": "OK"
+}
+```
+
+</Tab>

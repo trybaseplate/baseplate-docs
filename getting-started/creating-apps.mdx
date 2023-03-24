@@ -1,0 +1,38 @@
+---
+title: "🍎 Creating Apps"
+description: "Version control for your prompts and parameters."
+---
+
+Navigate to the Apps tab to build reusable prompt templates that you can use in
+multiple projects.
+
+Apps take variables - e.g. a customer's name or question, and use them to format
+a prompt. This creates a super flexible way to wrap unstructured user inputs in
+prompts that you've designed.
+
+Apps also use variables to find the right content from your Baseplate Database.
+
+<Frame>![](/images/creating-apps-1.png)</Frame>
+
+- Add Variables using the + button, or by pressing enter. Name the variable with
+  a simple, one-word title if possible.
+- Add your variables into your prompt template. This tells us where to put the
+  user provided values by putting the name of each form field inside double
+  curly brackets, e.g {{question}}.
+
+## Add Search Functionality to Reference a Database
+
+Apps need to search through your content database. When you click "Configure
+Embedding Search" you'll see your search options.
+
+This is where you can configure search to meet your specific use case.
+
+1. Choose a database
+2. Choose your search variables
+3. Choose the number of vectors to returned
+4. Choose a minimum similarity
+5. Add metadata filters
+6. Choose and optimize a hybrid search using both keywords and semantic search
+   for the best results
+
+<Frame>![](/images/creating-apps-2.png)</Frame>

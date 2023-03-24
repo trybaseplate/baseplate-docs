@@ -1,0 +1,51 @@
+---
+title: "🍽️ Baseplate (YC W23)"
+subtitle: "Overview"
+description: "Backend-as-a-Service for LLM Apps"
+---
+
+Baseplate is a backend optimized for LLM apps. Teams use our multimodal context
+database to build rich user experiences with LLMs. All from an interface as
+simple as a spreadsheet. That means you don't have to maintain and manage
+separate databases for your vectors and regular data anymore!
+
+<Frame caption="Hybrid database for your regular data and your embeddings">
+  <img src="/images/intro.png" />
+</Frame>
+
+Using Baseplate, a team can deploy a chat GPT app that responds with
+domain-specific information from documents, thumbnails, links, images, and more.
+(Who knows, maybe the next GPT model is multimodal too)
+
+## Why would we need this?
+
+In most applications, LLMs need to be connected to an ever changing set of data.
+It’s simple enough to parse and embed a few PDF’s. However, managing this data
+is tedious when you’re working with large, multimodal datasets that consistently
+need to be updated, re-indexed, and replaced.
+
+Plus you’re likely managing multiple databases - one for vectors, and one for
+your other data. This gets painful really fast.
+
+## Key Features:
+
+1. A flexible hybrid database. A single dataset in Baseplate can contain
+   - Embeddings
+   - Text
+   - Code
+   - Documents
+   - Images
+   - Links
+2. Database management
+   - Utilities for updating and managing vectors in bulk
+   - Organize and segment your data intuitively
+   - Work in the UI or programmatically via API
+3. Smart Search
+   - Choose an embedding model for your use case
+   - Use keyword, semantic, or hybrid search based on your use case
+   - Vector ranking based on more than just cosine similarity <br/>
+     - Human Feedback, Last Updated, Last Accessed, etc.
+4. Endpoints
+   - Build, test, and deploy LLMs via API endpoints
+   - Unlimited queries
+   - Built-in utilities for human feedback, logging, & caching

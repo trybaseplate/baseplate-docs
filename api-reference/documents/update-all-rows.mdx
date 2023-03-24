@@ -1,0 +1,34 @@
+---
+title: "Update All Rows for a Document"
+api:
+  "PATCH https://www.trybaseplate.io/api/datasets/{id}/documents/{document-id}"
+description:
+  "Update the content for an entire document. Warning: This will replace all
+  rows with this document ID!"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+<ParamField path="document-id" type="string" required>
+  Document ID to add rows under
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+<ParamField path="Content-Type" type="string" required>
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="rows" type="array" required>
+  Array of rows to insert to the dataset. See above for example.
+</ParamField>

@@ -1,0 +1,54 @@
+---
+title: "Add a Comment to a Log"
+api: "POST https://www.trybaseplate.io/endpoints/{id}/logs/{log-id}/comments"
+---
+
+## Parameters
+
+### Path
+
+<ParamField path="id" type="String" required>
+  Baseplate endpoint ID
+</ParamField>
+<ParamField path="log-id" type="String">
+  The ID of the log/usage. It is returned as "usageld" in completion requests.
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="String">
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+
+### Body
+
+<ParamField body="comment" type="String">
+  The comment to add.
+</ParamField>
+
+<Tabs>
+  <Tab title="🟢 200: OK">
+  ```json
+  {
+    "prompt": "Say this is a test",
+    "completion": "This is a test.",
+    "id": "11f96c9a-086c-4490-b330-af0d93c0b322",
+    "date": "2023-03-13",
+    "positive_rating": true,
+    "variant_id": "f04682e5-8bff-48c1-b498-7158d04e72de",
+    "comments": [
+        {
+            "name": "Ani Gottiparthy",
+            "email": "ani@example",
+            "comment": "This is a comment from the API",
+        },
+        {
+            "name": "Andrew Luo",
+            "email": "andrew@example",
+            "comment": "This is a comment from the API",
+        }
+    ]
+}
+```
+  </Tab>
+</Tabs>

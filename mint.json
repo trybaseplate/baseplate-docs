@@ -1,0 +1,98 @@
+{
+  "name": "Baseplate",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#EAB308",
+    "light": "#FFE38B",
+    "dark": "#AC8303",
+    "anchors": { "from": "#EAB308", "to": "#AD0DFF" }
+  },
+  "topbarCtaButton": {
+    "name": "Request Early Access",
+    "url": "https://www.baseplate.ai/"
+  },
+  "topbarLinks": [
+    {
+      "name": "Log In",
+      "url": "https://www.baseplate.ai/"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Request Access",
+      "icon": "star",
+      "url": "https://www.baseplate.ai/"
+    },
+    {
+      "name": "Contact Us",
+      "icon": "envelope",
+      "url": "mailto:founders@trybaseplate.io"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": ["introduction", "whats-new", "use-cases", "about-us"]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/add-your-teammates",
+        "getting-started/add-api-keys",
+        "getting-started/database",
+        "getting-started/creating-apps",
+        "getting-started/playground",
+        "getting-started/create-an-endpoint"
+      ]
+    },
+    {
+      "group": "API",
+      "pages": [
+        "api-reference/completions",
+        {
+          "group": "📊 Logs & Human Feedback",
+          "pages": [
+            "api-reference/logs-and-human-feedback/updates-rating",
+            "api-reference/logs-and-human-feedback/add-comment"
+          ]
+        },
+        "api-reference/datasets",
+        {
+          "group": "📃 Documents",
+          "pages": [
+            "api-reference/documents/overview",
+            "api-reference/documents/list-documents",
+            "api-reference/documents/create-document",
+            "api-reference/documents/add-data-rows",
+            "api-reference/documents/upsert-data-rows",
+            "api-reference/documents/upload-document",
+            "api-reference/documents/update-all-rows",
+            "api-reference/documents/update-single-row",
+            "api-reference/documents/delete-document",
+            "api-reference/documents/delete-single-row"
+          ]
+        },
+        "api-reference/search"
+      ]
+    },
+    {
+      "group": "Fancy Stuff",
+      "pages": [
+        "fancy-stuff/training--alpha",
+        "fancy-stuff/sync-with-github--alpha"
+      ]
+    },
+    {
+      "group": "Known Issues",
+      "pages": ["known-issues"]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/trybaseplate",
+    "linkedin": "https://www.linkedin.com/company/trybaseplate/"
+  }
+}

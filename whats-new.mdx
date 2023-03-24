@@ -1,0 +1,102 @@
+---
+title: "🍜 What's New?"
+description: "Baseplate Changelog"
+---
+
+### **3/13/23 - Backend-as-a-Service for LLM Apps**
+
+- Hybrid Datasets 📑
+
+  - Add any number of columns ( embeddings, data, metadata)
+  - Use your datasets to provide your LLM with accurate and relevant context
+  - Use the data returned via the API to create rich UX's in your chat interface
+  - You don't have to manage a vector database AND a regular database. It's all
+    under one roof
+
+- Document Management 📖
+
+  - We've added a ton of support for managing datasets with multiple documents
+  - It's now extremely easy to replace vectors from an old document with content
+    from new documents
+  - You can now organize and return content based on the document id
+  - Check out the [API reference](/api-reference/completions) for some more info
+
+- Unified Datasets
+  - We've deprecated "Test/Train Datasets"
+  - You can train and test your models using your hybrid datasets
+
+---
+
+### **3/2/23 - Chat GPT API** 👀
+
+#### OpenAI released the Chat GPT API, and we've added it Baseplate
+
+- Go to the chat bubble from the top right of the playground to use our Chat GPT
+  playground
+
+- We've built in optimizations based on best practices to make your results
+  better
+
+<Warning>
+  If you switch to using Chat GPT, the API structure for you endpoints will
+  change too. Make sure to look at the API instructions for your endpoint before
+  deploying!
+</Warning>
+
+<Frame caption="Chat GPT API is now supported!">
+  ![](/images/chat-gpt.png)
+</Frame>
+
+### 2/24/23 - Introducing Baseplate for Teams
+
+- **Your Team, One Workspace**
+
+  - Your team's prompt Templates, Datasets, and Playground+ sessions are now
+    shared!
+  - You can now work together on tasks like prompt iteration, configuring
+    semantic search, and more.
+  - Never lose track of your teams historical data. Look back and see which
+    variants are performing best.
+
+- **Baseplate Endpoints**
+  - Found a variant that works? Deploy to production with a single API call
+  - A variant consists of a prompt, a data augmentation (semantic search)
+    resource, and a LLM  
+     \* By composing different combinations, you can quickly experiment and find
+    the best strategy for your use case
+  - Configure your connection to a Baseplate endpoint once in code, then never
+    worry again. You can run experiments and deploy new variants to that
+    endpoint from the console.
+
+### 2/20/23 - Baseplate 0.2
+
+- **Better Organization and Space Utilization. New Landing Page**
+
+  - Some of you asked for us to make text boxes more readable and simplify our
+    navigation
+  - There is now one sidebar (which you can minimize), so you have more space to
+    work
+  - It's now much easier to read and compare prompts/completions
+  - You also let us know that our web page didn't express the value of the
+    product. Check out our latest version!
+
+- **More Customized Embedding Support**
+
+  - You can now choose a chunk size
+  - You can now choose a "k" factor. This changes the number of search results
+  - You can now choose any number of variables to use in your embedding search
+
+- **Github Integration Alpha**
+
+  - You can now add our Github app to your repo and keep your templates in code
+    and Baseplate in sync
+  - This integrates with popular prompt formats, like Langchain's serialization
+
+- **Pricing Update**
+
+  - The Starter tier is now $35 per seat
+  - Teams looking to fine tune directly on the platform will need to upgrade to
+    the Pro tier
+
+- **Bug Fixes**
+  - Way too many

@@ -1,0 +1,32 @@
+---
+title: "Add Data Rows"
+api:
+  "POST
+  https://www.trybaseplate.io/api/datasets/{id}/documents/{document-id}/rows"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+<ParamField path="document-id" type="string" required>
+  Document ID to add rows under
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+<ParamField path="Content-Type" type="string" required>
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="rows" type="array" required>
+  Array of rows to insert to the dataset. See above for example.
+</ParamField>

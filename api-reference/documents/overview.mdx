@@ -1,0 +1,41 @@
+---
+title: "Overview"
+description: "Manage documents in your dataset"
+---
+
+Rows added to embedded datasets will automatically be embedded. The rows body should contain a list of objects, each with a data and optional metadata . The data object should contain a field text which will be used for the row's embedding. Each key in the data object will be added as a column in the dataset. Each key in the metadata object will be added as a metadata column in the dataset.
+
+**Only the "text" column will be embedded**
+
+For example this request body
+
+```json
+{
+    "rows": [
+        {
+            "data": {
+                "text": "Baseplate",
+                "city": "San Francisco"
+            },
+            "metadata": {
+                "state": "California"
+            }
+        },
+        {
+            "data": {
+                "text": "Bloomberg",
+                "city": "New York City",
+                "country": "U.S"
+            },
+            "metadata": {
+                "state": "New York"
+            }
+        }
+    ]
+}
+```
+
+| text | city | country | metadata |
+| ---- | ----- | ------ | -------- | 
+| Baseplate | San Francisco |  | \{"state": "California"} | 
+| Bloomberg | New York City | U.S.  | \{"state": "New York"} | 
