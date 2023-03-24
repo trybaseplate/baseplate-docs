@@ -1,0 +1,88 @@
+---
+title: "🧙 Completions"
+api: "POST https://www.trybaseplate.io/api/endpoints/{id}/completions"
+description:
+  "Use this API to generate completions from a project. See the API section of
+  your endpoint on the Baseplate console for copy-pasteable code."
+---
+
+## Generates a completion
+
+Generates a completion from endpoint {id}. Your endpoint ID can be found in the
+API tab of your endpoint or in the URL.
+
+## Parameters
+
+### Path
+
+<ParamField path="id" type="String" required>
+  Baseplate endpoint ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="String" required>
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+<ParamField path="Content-Type" type="String" required>
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="values" type="Json">
+  A json object with keys matching the variables of your deployed template.
+</ParamField>
+<ParamField body="stream" type="Boolean">
+  If true, response will be sent back as Server Sent Events. A [DONE] message is
+  sent at the end of the completion and the search results (if applicable) are
+  sent after the [DONE]. See below for example.
+</ParamField>
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+{
+  "id": "cmpl-6htWn45Ch0G37ZZFI48zt29k5atNe",
+  "object": "text_completion",
+  "created": 1675919573,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "text": "\n\nThis Jacket is the ultimate in shoe fashion. It's sleek, stylish",
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "length",
+      "usage_id": "89b572c6-f0c9-40b5-bdb4-dc5cb6a99144"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 16,
+    "total_tokens": 39
+  },
+  "prompt_cost": 0.00046,
+  "completion_cost": 0.00032,
+  "baseplate_model_name": "text-davinci-003"
+}
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+Unauthorized for project or invalid API key.
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>
+
+### Example curl request
+
+![](/images/api/Screen%20Shot%202023-02-24%20at%203.16.00%20PM.png)

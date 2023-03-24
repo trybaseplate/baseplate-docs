@@ -1,0 +1,67 @@
+---
+title: "📕 Datasets"
+api: "POST https://www.trybaseplate.io/api/datasets"
+description:
+  "Use this API to generate completions from a project. See the API section of
+  your endpoint on the Baseplate console for copy-pasteable code."
+---
+
+## Generates a completion
+
+Generates a completion from endpoint {id}. Your endpoint ID can be found in the
+API tab of your endpoint or in the URL.
+
+## Parameters
+
+### Header
+
+<ParamField path="Authorization" type="" required>
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+<ParamField path="Content-Type" type="">
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="name" type="" requipred>
+  Name of the dataset
+</ParamField>
+<ParamField body="description" type="">
+  Description for the dataset
+</ParamField>
+<ParamField body="columns" type="Array">
+  Array of strings for column names.
+</ParamField>
+<ParamField body="embedded" type="Boolean">
+  If true, this operation will create an embedded dataset.
+</ParamField>
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+{
+    "id":"7a966cc7-62ea-41a7-a3bc-81cba234438f",
+    "created_at":"2023-03-07T18:34:51.217059+00:00",
+    "name":"Example Name",
+    "description":"Example Description",
+    "columns":["col1","col2"],
+    "organization_id":"c86cb775-2d6d-4a77-b119-3bc96e5c7a2e"}]
+}
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+Unauthorized for project or invalid API key.
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>

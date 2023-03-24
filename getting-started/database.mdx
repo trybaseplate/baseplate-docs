@@ -1,0 +1,57 @@
+---
+title: "🎁 Database"
+description: "Create a database for your LLM App"
+---
+
+Instead of managing your data, a vector database, an embedding model, a search
+algorithm, a PostgreSQL database, and your LLM all in different places...
+
+What if you could do it in one spot, with your teammates?
+
+<Frame caption="Hybrid database for your regular data and your embeddings">
+  <img src="/images/database.png" />
+</Frame>
+
+## Create Columns
+
+<Frame caption="Add data, metadata, and embedding columns">
+  <img src="/images/create-columns.png" />
+</Frame>
+
+A Baseplate database is as flexible as a spreadsheet. You can create any number
+of columns, and edit them directly from the UI.
+
+1. Embedding Columns <br/> The content in these columns will be embedded using
+   the embedding model you select
+2. Data Columns <br/> Typically images, urls, code snippets, or links that you'd
+   like to be returned with your search result
+3. Metadata Columns <br/> Really useful for large datasets to make sure you're
+   getting relevant vectors. Segment your data based on customer, datasource,
+   version, date, or whatever your prefer!
+
+## Adding Documents
+
+1. Add a whole document <br/> You can use Baseplate's built in parsing
+   capabilities to break documents into chunks for embedding. Specify a chunk
+   size and which column to add the chunks to, and we'll do the rest
+2. Add context chunk-by-chunk <br/> For more nuanced indices, upload rows to
+   Baseplate via API once you've chunked them
+
+<Frame>![](/images/adding-documents.png)</Frame>
+
+## Updating Vectors
+
+Edit your vectors from the interface or through the API. We'll automatically
+handle the embedding, updating of your text representation, and upsert of the
+new vector.
+
+<Frame>![](/images/updating-vectors.png)</Frame>
+
+## Manage Documents
+
+<Frame caption="Manage your Database">
+  <img src="/images/manage-documents.png" />
+</Frame>
+
+You can view, edit, replace, and delete your documents at once, instead of going
+row-by-row. See our API for a guide on replacing old data.

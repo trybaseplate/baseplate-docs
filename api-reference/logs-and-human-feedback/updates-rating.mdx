@@ -1,0 +1,81 @@
+---
+title: "Updates the Rating for a Completion Log"
+api: "PATCH https://www.trybaseplate.io/endpoints/{id}/logs"
+description:
+  "Updates the rating of a completion using human feedback from your users. If
+  you surface a like/dislike or other rating system, you can track the feedback
+  in Baseplate."
+---
+
+## Parameters
+
+### Path
+
+<ParamField path="id" type="" required>
+  Baseplate endpoint ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="String" required>
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+<ParamField path="Content-Type" type="" required>
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="positive_rating" type="Boolean">
+  True indicates a positive rating (thumbs up)
+</ParamField>
+<ParamField body="usage_id" type="">
+  The usage ID, which is returned when calling the completions endpoint
+</ParamField>
+<ParamField body="logs" type="Array">
+  Array of logs to batch update. Each object should contain a positive_rating
+  and usage_id. Either "logs" or "positive_rating + "usage_id" is required.
+</ParamField>
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+{
+  "user_id": "8f48225a-8d88-48ae-b464-d02051b9b556",
+  "project_id": "52ab5474-5535-4bba-9d7f-590e1dd0a280",
+  "timestamp": "2023-02-09T05:11:39.721074+00:00",
+  "openai_name": "text-davinci-003",
+  "cost": 0.00078,
+  "prompt": "Write a product description for Jacket. It is a new product in shoe. The description should have a angry tone.",
+  "completion": "\n\nThis Jacket is the ultimate in shoe fashion. It's sleek, stylish",
+  "id": "04bc3dfa-d1a1-4647-8970-f180a06f6bea",
+  "date": "2023-02-09",
+  "rating": 0,
+  "temp": 0,
+  "completions": null,
+  "managed": true,
+  "positive_rating": true,
+  "template_id": null,
+  "values": {
+    "tone": "angry",
+    "category": "shoe",
+    "product_name": "Jacket"
+  }
+}
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+Unauthorized for project or invalid API key.
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>

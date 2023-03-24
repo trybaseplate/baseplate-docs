@@ -1,0 +1,48 @@
+---
+title: "Update a Single Row"
+api: "PATCH https://www.trybaseplate.io/api/datasets/{id}/rows/{row-id}"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+<ParamField path="row-id" type="string" required>
+  Row ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+<ParamField path="Content-Type" type="string" required>
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="data" type="object" required>
+  Updated data. Each key in this object should match a column in your dataset.
+  Format is same as above example for insertion. One of metadata or data is
+  required.
+</ParamField>
+
+<ParamField body="metadata" type="object" required>
+  Updated metadata. One of metadata or data is required.
+</ParamField>
+
+### Responses
+
+<Tab title="🟢 200: OK">
+
+```json
+{
+  "row_id": "218981"
+}
+```
+
+</Tab>

@@ -1,0 +1,48 @@
+---
+title: "🚀 Create an Endpoint"
+description: "Share your work with the world"
+---
+
+<Tip>
+  You can deploy LLM backends directly from Baseplate. Set up an endpoint once
+  in your code, and you're good to go!
+</Tip>
+
+The worst part of prototyping great LLM apps is having to reimplement them again
+in your codebase. Baseplate Endpoints makes sure you never have to do that
+again!
+
+Each endpoint has an ID that you will use as a reference in your code.
+
+## Why do it this way?
+
+- Prototyping in code is slow, difficult, and annoying. Setting up new versions
+  in a nice UI can speed up workflows greatly
+- Easy to run tests and experiments different variants
+- Monitor and manage in a single place
+- Our endpoints are performance optimized and run on the edge
+
+## Create an Endpoint
+
+Go to the Endpoints page and create an Endpoint.
+
+<Frame caption="Endpoints take your prototyped LLM and creates a ready to use API!">
+  <img src="/images/create-an-endpoint.png" />
+</Frame>
+
+## Variants
+
+Variants are versions of your LLM application. They are composable units that
+can be hot-swapped with each other.
+
+A variant consists of:
+
+- An LLM (a foundation model or a fine tuned model)
+- A Prompt Template
+- (Optional) An external data source. See Semantic Search for more info.
+
+Create multiple variants to experiment and improve your results.
+
+<Frame caption="Create multiple variants to experiment and improve your results.">
+  <img src="/images/create-an-endpoint-2.png" />
+</Frame>

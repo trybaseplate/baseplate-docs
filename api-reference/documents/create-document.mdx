@@ -1,0 +1,30 @@
+---
+title: "Create a Document"
+api: "POST https://www.trybaseplate.io/api/datasets/{id}/documents"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string">
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Body
+
+<ParamField body="id" type="string" required>
+  The document ID to create. Must be unique within a dataset.
+</ParamField>
+
+<ParamField body="filename" type="string">
+  The name of the file
+</ParamField>
+
+<ParamField body="url" type="string">
+  The url of the file
+</ParamField>

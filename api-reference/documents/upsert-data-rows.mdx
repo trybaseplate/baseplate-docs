@@ -1,0 +1,30 @@
+---
+title: "Upsert Data Rows"
+api: "POST https://www.trybaseplate.io/api/datasets/{id}/rows/upsert"
+description:
+  "Upserts the rows. Creates a document if no document_id is provided in the
+  request. If one is provided, and it"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Body
+
+<ParamField body="rows" type="array" required>
+  Rows to upsert. See above for example.
+</ParamField>
+
+<ParamField body="document-id" type="string" required>
+  The document ID to upsert. If not provided, a document ID will be created for
+  you.
+</ParamField>

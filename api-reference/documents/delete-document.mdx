@@ -1,0 +1,45 @@
+---
+title: "Delete a Document"
+api:
+  "DELETE https://www.trybaseplate.io/api/datasets/{id}/documents/{document-id}"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+<ParamField path="document-id" type="string" required>
+  Document ID to add rows under
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string" required>
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Responses
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>
