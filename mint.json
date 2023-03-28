@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Log In",
-      "url": "https://www.baseplate.ai/"
+      "url": "https://www.baseplate.ai/login"
     }
   ],
   "anchors": [
