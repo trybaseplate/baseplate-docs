@@ -1,7 +1,7 @@
 ---
 title: "Upload a Document (file) to a Dataset"
-api: "POST https://www.trybaseplate.io/api/datasets/{id}/upload"
-description: "Upload a document directly and specify chunk size and overlap"
+api: "POST https://www.baseplate.ai/api/datasets/7129ce91-7980-4518-9f51-94fef8a6b955/upload"
+description: "Upload a document directly and specify chunk size/overlap, and metadata. Limit to 100MB uploads"
 ---
 
 ### Path Parameters
@@ -19,11 +19,11 @@ description: "Upload a document directly and specify chunk size and overlap"
 ### Body
 
 <ParamField body="chunk_size" type="number">
-  Chunk size to chunk documents. Defaults to 1000 characters.
+  Chunk size to chunk documents. Defaults to 1000 characters. Limited to 1000 for hybrid and 4000 for standard datasets.
 </ParamField>
 
 <ParamField body="chunk_overlap" type="number" default="150 characters">
-  Overlap size for chunks.
+  Overlap size for chunks. Must be smaller than chunk size.
 </ParamField>
 
 <ParamField body="file" type="file" required>
@@ -31,7 +31,7 @@ description: "Upload a document directly and specify chunk size and overlap"
 </ParamField>
 
 <ParamField body="document-id" type="string" required>
-  The document ID to create for this file.
+  The document ID to create for this file. If none is provided, a uuidv4 ID is generated for you.
 </ParamField>
 
 ### Responses
