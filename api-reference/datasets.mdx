@@ -31,7 +31,14 @@ API tab of your endpoint or in the URL.
   Description for the dataset
 </ParamField>
 <ParamField body="columns" type="Array">
-  Array of strings for column names.
+  Array of strings for column names. The default text embedding column will be
+  added if not provided.
+</ParamField>
+<ParamField body="metadata_cols" type="Array">
+  Array of strings for metadata columns.
+</ParamField>
+<ParamField body="image_cols" type="Array">
+  Array of strings for image columns.
 </ParamField>
 <ParamField body="embedded" type="Boolean">
   If true, this operation will create an embedded dataset.
@@ -42,12 +49,12 @@ API tab of your endpoint or in the URL.
 
 ```json
 {
-    "id":"7a966cc7-62ea-41a7-a3bc-81cba234438f",
-    "created_at":"2023-03-07T18:34:51.217059+00:00",
-    "name":"Example Name",
-    "description":"Example Description",
-    "columns":["col1","col2"],
-    "organization_id":"c86cb775-2d6d-4a77-b119-3bc96e5c7a2e"}]
+  "id": "7a966cc7-62ea-41a7-a3bc-81cba234438f",
+  "created_at": "2023-03-07T18:34:51.217059+00:00",
+  "name": "Example Name",
+  "description": "Example Description",
+  "columns": ["col1", "col2"],
+  "organization_id": "c86cb775-2d6d-4a77-b119-3bc96e5c7a2e"
 }
 ```
 
