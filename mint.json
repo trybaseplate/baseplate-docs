@@ -13,12 +13,12 @@
   },
   "topbarCtaButton": {
     "name": "Try it for free",
-    "url": "https://www.baseplate.ai/login"
+    "url": "https://www.trybaseplate.io/login"
   },
   "topbarLinks": [
     {
       "name": "Log In",
-      "url": "https://www.baseplate.ai/login"
+      "url": "https://www.trybaseplate.io/login"
     }
   ],
   "anchors": [
