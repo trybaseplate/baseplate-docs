@@ -19,16 +19,16 @@ description:
 
 ### Header
 
-<ParamField path="Authorization" type="string" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
 </ParamField>
 
-<ParamField path="Content-Type" type="string" required>
+<ParamField header="Content-Type" type="string">
   Use application/json
 </ParamField>
 
 ### Body
 
 <ParamField body="rows" type="array" required>
-  Array of rows to insert to the dataset. See above for example.
+  Array of rows that will replace the document.
 </ParamField>

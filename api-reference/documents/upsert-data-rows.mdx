@@ -14,7 +14,7 @@ description:
 
 ### Header
 
-<ParamField path="Authorization" type="string" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
 </ParamField>
 
@@ -24,7 +24,7 @@ description:
   Rows to upsert. See above for example.
 </ParamField>
 
-<ParamField body="document-id" type="string" required>
+<ParamField body="document-id" type="string">
   The document ID to upsert. If not provided, a document ID will be created for
   you.
 </ParamField>

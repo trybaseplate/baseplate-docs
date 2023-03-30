@@ -1,5 +1,5 @@
 ---
-title: "🧙 Completions"
+title: "Completions"
 api: "POST https://www.baseplate.ai/api/endpoints/{id}/completions"
 description:
   "Use this API to generate completions from a project. See the API section of
@@ -13,27 +13,30 @@ API tab of your endpoint or in the URL.
 
 ## Parameters
 
-### Path
+### Paths
 
-<ParamField path="id" type="String" required>
+<ParamField path="id" type="string" required>
   Baseplate endpoint ID
 </ParamField>
 
 ### Header
 
-<ParamField path="Authorization" type="String" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
 </ParamField>
-<ParamField path="Content-Type" type="String" required>
+<ParamField header="Content-Type" type="string">
   Use application/json
 </ParamField>
 
 ### Body
 
-<ParamField body="values" type="Json">
+<ParamField body="values" type="json">
   A json object with keys matching the variables of your deployed template.
 </ParamField>
-<ParamField body="stream" type="Boolean">
+<ParamField body="messages" type="array">
+  An array of the chat history, for chat based models.
+</ParamField>
+<ParamField body="stream" type="boolean">
   If true, response will be sent back as Server Sent Events. A [DONE] message is
   sent at the end of the completion and the search results (if applicable) are
   sent after the [DONE]. See below for example.
@@ -82,7 +85,3 @@ Unauthorized for project or invalid API key.
 
 </Tab>
 </Tabs>
-
-### Example curl request
-
-![](/images/api/Screen%20Shot%202023-02-24%20at%203.16.00%20PM.png)

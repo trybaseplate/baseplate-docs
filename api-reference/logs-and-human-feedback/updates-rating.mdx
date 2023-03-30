@@ -11,16 +11,16 @@ description:
 
 ### Path
 
-<ParamField path="id" type="" required>
+<ParamField path="id" type="string" required>
   Baseplate endpoint ID
 </ParamField>
 
 ### Header
 
-<ParamField path="Authorization" type="String" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
 </ParamField>
-<ParamField path="Content-Type" type="" required>
+<ParamField header="Content-Type" type="string">
   Use application/json
 </ParamField>
 

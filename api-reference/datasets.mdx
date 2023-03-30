@@ -1,5 +1,5 @@
 ---
-title: "📕 Datasets"
+title: "Datasets"
 api: "POST https://www.baseplate.ai/api/datasets"
 description:
   "Use this API to generate completions from a project. See the API section of
@@ -15,19 +15,19 @@ API tab of your endpoint or in the URL.
 
 ### Header
 
-<ParamField path="Authorization" type="" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
 </ParamField>
-<ParamField path="Content-Type" type="">
+<ParamField header="Content-Type" type="string">
   Use application/json
 </ParamField>
 
 ### Body
 
-<ParamField body="name" type="" requipred>
+<ParamField body="name" type="string" requipred>
   Name of the dataset
 </ParamField>
-<ParamField body="description" type="">
+<ParamField body="description" type="string">
   Description for the dataset
 </ParamField>
 <ParamField body="columns" type="Array">

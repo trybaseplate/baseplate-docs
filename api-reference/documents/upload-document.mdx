@@ -12,7 +12,7 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 
 ### Header
 
-<ParamField path="Authorization" type="string" required>
+<ParamField header="Authorization" type="string" required>
   Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
 </ParamField>
 
@@ -22,15 +22,15 @@ description: "Upload a document directly and specify chunk size/overlap, and met
   Chunk size to chunk documents. Defaults to 1000 characters. Limited to 1000 for hybrid and 4000 for standard datasets.
 </ParamField>
 
-<ParamField body="chunk_overlap" type="number" default="150 characters">
-  Overlap size for chunks. Must be smaller than chunk size.
+<ParamField body="chunk_overlap" type="number" default="150">
+  Overlap size for chunks. Must be smaller than chunk size. Defaults to 150.
 </ParamField>
 
 <ParamField body="file" type="file" required>
   Attach a file to the request form-data.
 </ParamField>
 
-<ParamField body="document-id" type="string" required>
+<ParamField body="document-id" type="string">
   The document ID to create for this file. If none is provided, a uuidv4 ID is generated for you.
 </ParamField>
 

@@ -12,8 +12,8 @@
     "anchors": { "from": "#EAB308", "to": "#AD0DFF" }
   },
   "topbarCtaButton": {
-    "name": "Request Early Access",
-    "url": "https://www.baseplate.ai/"
+    "name": "Try it for free",
+    "url": "https://www.baseplate.ai/login"
   },
   "topbarLinks": [
     {
@@ -22,11 +22,6 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Request Access",
-      "icon": "star",
-      "url": "https://www.baseplate.ai/"
-    },
     {
       "name": "Contact Us",
       "icon": "envelope",

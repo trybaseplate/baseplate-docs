@@ -1,5 +1,5 @@
 ---
-title: "🔍 Search"
+title: "Search"
 description: "Manually search your dataset"
 api: "POST https://www.baseplate.ai/api/datasets/{id}/search"
 ---
@@ -27,7 +27,7 @@ api: "POST https://www.baseplate.ai/api/datasets/{id}/search"
 </ParamField>
 
 <ParamField body="filter" type="object">
-  Metadata filter
+  Metadata filter. Uses Pinecone filter syntax: https://docs.pinecone.io/docs/metadata-filtering
 </ParamField>
 
 <ParamField body="alpha" type="number" defualt="0.5">
