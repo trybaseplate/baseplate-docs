@@ -49,15 +49,21 @@
       "pages": [
         "api-reference/completions",
         {
-          "group": "📊 Logs & Human Feedback",
+          "group": "Logs & Human Feedback",
           "pages": [
             "api-reference/logs-and-human-feedback/updates-rating",
             "api-reference/logs-and-human-feedback/add-comment"
           ]
         },
-        "api-reference/datasets",
         {
-          "group": "📃 Documents",
+          "group": "Datasets",
+          "pages": [
+            "api-reference/datasets/datasets",
+            "api-reference/datasets/list-rowsp"
+          ]
+        },
+        {
+          "group": "Documents",
           "pages": [
             "api-reference/documents/overview",
             "api-reference/documents/list-documents",
