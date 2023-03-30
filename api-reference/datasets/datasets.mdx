@@ -1,15 +1,13 @@
 ---
-title: "Datasets"
+title: "Create a dataset"
 api: "POST https://app.baseplate.ai/api/datasets"
 description:
-  "Use this API to generate completions from a project. See the API section of
-  your endpoint on the Baseplate console for copy-pasteable code."
+  "Creates a dataset"
 ---
 
-## Generates a completion
+## Creates a dataset
 
-Generates a completion from endpoint {id}. Your endpoint ID can be found in the
-API tab of your endpoint or in the URL.
+The dataset will be created in the organization of the caller.
 
 ## Parameters
 
@@ -53,7 +51,8 @@ API tab of your endpoint or in the URL.
   "created_at": "2023-03-07T18:34:51.217059+00:00",
   "name": "Example Name",
   "description": "Example Description",
-  "columns": ["col1", "col2"],
+  "columns": ["col1", "col2", "text"],
+  "metadata_cols": ["date", "time"],
   "organization_id": "c86cb775-2d6d-4a77-b119-3bc96e5c7a2e"
 }
 ```

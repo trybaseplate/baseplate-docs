@@ -1,0 +1,74 @@
+---
+title: "List rows under a dataset"
+api: "GET https://app.baseplate.ai/api/datasets/{id}/rows"
+description: "Lists rows under a dataset. The rows are returned in the order they were added to the dataset."
+---
+
+## List rows under a dataset.
+
+Lists data rows, with options for metadata filtering and pagination.
+
+## Parameters
+
+### Header
+
+<ParamField header="Authorization" type="string" required>
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+<ParamField header="Content-Type" type="string">
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="offset" type="number">
+  Optional offset for pagination.
+</ParamField>
+<ParamField body="page_size" type="number">
+  Optional page size.
+</ParamField>
+
+<ParamField body="filter" type="object">
+  Optional metadata filter. Uses Pinecone filter syntax:
+  https://docs.pinecone.io/docs/metadata-filtering
+</ParamField>
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+[
+  {
+    "id": 329904,
+    "dataset_id": "5bfd34e3-f7de-4b80-b3d0-841494056e9e",
+    "data": {
+      "text": "This is a test document."
+    },
+    "embedding_vector_ids": {
+      "text": "5aa6a774ec"
+    },
+    "metadata": {
+      "date": "10/15/2022",
+      "rowId": 329904,
+      "documentId": "doc1"
+    },
+    "document_id": "doc1",
+    "image_paths": null
+  }
+]
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+Unauthorized for project or invalid API key.
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>
