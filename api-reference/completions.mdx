@@ -33,8 +33,11 @@ API tab of your endpoint or in the URL.
 <ParamField body="values" type="json">
   A json object with keys matching the variables of your deployed template.
 </ParamField>
+<ParamField body="prompt" type="array">
+  A prompt for Anthropic, ada, babbage, curie, and davinci models. One of messages or prompt is required.
+</ParamField>
 <ParamField body="messages" type="array">
-  An array of the chat history, for chat based models.
+  An array of the chat history, for gpt-3.5 and gpt-4 models. One of messages or prompt is required.
 </ParamField>
 <ParamField body="stream" type="boolean">
   If true, response will be sent back as Server Sent Events. A [DONE] message is
