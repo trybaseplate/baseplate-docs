@@ -6,6 +6,8 @@ description: "Version control for your prompts and parameters."
 Navigate to the Apps tab to build reusable prompt templates that you can use in
 multiple projects.
 
+You LLM Apps might need to connect to an external datasource. Apps integrate closely with datasets so you easily inject context into your prompts. 
+
 Apps take variables - e.g. a customer's name or question, and use them to format
 a prompt. This creates a super flexible way to wrap unstructured user inputs in
 prompts that you've designed.
@@ -28,15 +30,13 @@ Embedding Search" you'll see your search options.
 This is where you can configure search to meet your specific use case.
 
 1. Choose a database
-2. Choose your search variables
-3. Choose the number of vectors to returned
-4. Choose a minimum similarity
-5. Add metadata filters
-6. Choose and optimize a hybrid search using both keywords and semantic search
-   for the best results
+2. Choose your search variables. Your search variables will be embedded by the model used in you dataset. 
+3. Choose the number of rows to return
+4. Choose a minimum similarity. This lets you filter out low confidence results, and prevent hallucination.
+5. Add metadata filters. The filters allow you to specify specific rows of your data based on custom properties.
+6. (Team Plan) For Team Plan customers using fine-tuned hybrid search, the alpha parameter gives you additional controls to improve results.
 
 <Frame>![](/images/creating-apps-2.png)</Frame>
-
 
 ## Deploy Your App
 When you're satisfied, commit your app. Committing your app creates a read-only version that is safe to deploy. This prevents accidents from happening in production.
