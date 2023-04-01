@@ -34,6 +34,10 @@ description: "Upload a document directly and specify chunk size/overlap, and met
   The document ID to create for this file. If none is provided, a uuidv4 ID is generated for you.
 </ParamField>
 
+<ParamField body="metadata" type="string">
+  JSON stringified metadata to attach to the document. Must be a valid JSON string.
+</ParamField>
+
 ### Responses
 
 <Tab title="🟢 200: OK">
