@@ -40,7 +40,6 @@
         "getting-started/add-api-keys",
         "getting-started/database",
         "getting-started/creating-apps",
-        "getting-started/playground",
         "getting-started/create-an-endpoint"
       ]
     },
@@ -55,6 +54,8 @@
             "api-reference/logs-and-human-feedback/add-comment"
           ]
         },
+        ,
+        "api-reference/search"
         {
           "group": "Datasets",
           "pages": [
@@ -76,21 +77,17 @@
             "api-reference/documents/delete-document",
             "api-reference/documents/delete-single-row"
           ]
-        },
-        "api-reference/search"
+        }
       ]
     },
     {
-      "group": "Fancy Stuff",
+      "group": "Deprecated,
       "pages": [
         "fancy-stuff/training--alpha",
-        "fancy-stuff/sync-with-github--alpha"
+        "fancy-stuff/sync-with-github--alpha",
+         "getting-started/playground",
       ]
     },
-    {
-      "group": "Known Issues",
-      "pages": ["known-issues"]
-    }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/trybaseplate",
