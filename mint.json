@@ -40,7 +40,8 @@
         "getting-started/add-api-keys",
         "getting-started/database",
         "getting-started/creating-apps",
-        "getting-started/create-an-endpoint"
+        "getting-started/create-an-endpoint",
+        "getting-started/playground",
       ]
     },
     {
@@ -85,7 +86,7 @@
       "pages": [
         "fancy-stuff/training--alpha",
         "fancy-stuff/sync-with-github--alpha",
-         "getting-started/playground",
+  
       ]
     },
   ],
