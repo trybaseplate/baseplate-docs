@@ -18,12 +18,12 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 
 ### Body
 
-<ParamField body="chunk_size" type="number">
-  Chunk size to chunk documents. Defaults to 1000 characters. Limited to 1000 for hybrid and 4000 for standard datasets.
+<ParamField body="chunk_size" type="number" default="1000">
+  Chunk size to chunk documents. Defaults to 1000 characters. Limited to 2000 for hybrid and 5000 for standard datasets.
 </ParamField>
 
-<ParamField body="chunk_overlap" type="number" default="150">
-  Overlap size for chunks. Must be smaller than chunk size. Defaults to 150.
+<ParamField body="chunk_overlap" type="number" default="100">
+  Overlap size for chunks. Must be smaller than chunk size.
 </ParamField>
 
 <ParamField body="file" type="file" required>
