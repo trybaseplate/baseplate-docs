@@ -31,7 +31,7 @@
   "navigation": [
     {
       "group": "Introduction",
-      "pages": ["introduction", "whats-new", "use-cases", "about-us"]
+      "pages": ["introduction", "whats-new", "use-cases"]
     },
     {
       "group": "Getting Started",
