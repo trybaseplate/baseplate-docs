@@ -19,7 +19,8 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 ### Body
 
 <ParamField body="chunk_size" type="number" default="1000">
-  Chunk size to chunk documents. Defaults to 1000 characters. Limited to 2000 for hybrid and 5000 for standard datasets.
+  Chunk size to chunk documents. Defaults to 1000 characters. Limited to 2000
+  for hybrid and 5000 for standard datasets.
 </ParamField>
 
 <ParamField body="chunk_overlap" type="number" default="100">
@@ -31,11 +32,22 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 </ParamField>
 
 <ParamField body="document-id" type="string">
-  The document ID to create for this file. If none is provided, a uuidv4 ID is generated for you.
+  The document ID to create for this file. If none is provided, a uuidv4 ID is
+  generated for you.
 </ParamField>
 
 <ParamField body="metadata" type="string">
-  JSON stringified metadata to attach to the document. Must be a valid JSON string.
+  JSON stringified metadata to attach to the document. Must be a valid JSON
+  string. Supported metadata value types are: string, number, boolean, and array
+  of strings.
+  ```json
+  {
+    "key1": "value1",
+    "key2": 2,
+    "key3": true,
+    "key4": ["value4", "value5"]
+  }
+  ```
 </ParamField>
 
 ### Responses

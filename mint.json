@@ -28,6 +28,11 @@
       "url": "mailto:founders@trybaseplate.io"
     }
   ],
+  "api": {
+    "auth": {
+      "method": "bearer"
+    }
+  },
   "navigation": [
     {
       "group": "Introduction",
@@ -56,7 +61,7 @@
             "api-reference/logs-and-human-feedback/add-comment"
           ]
         },
-      
+
         {
           "group": "Datasets",
           "pages": [
@@ -79,7 +84,6 @@
             "api-reference/documents/delete-single-row"
           ]
         }
-       
       ]
     },
     {
@@ -87,7 +91,6 @@
       "pages": [
         "fancy-stuff/training--alpha",
         "fancy-stuff/sync-with-github--alpha"
-  
       ]
     }
   ],
