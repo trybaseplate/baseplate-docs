@@ -28,3 +28,19 @@ api: "POST https://app.baseplate.ai/api/datasets/{id}/documents"
 <ParamField body="url" type="string">
   The url of the file
 </ParamField>
+
+<ParamField body="content" type="string">
+  Content of a document to add.
+</ParamField>
+
+<ParamField body="parse_url" type="boolean">
+  If true, will GET the url and parse the response as a document.
+</ParamField>
+
+<ParamField body="chunk_size" type="number" default="1000">
+  Sets the chunk size if parse_url or content is set.
+</ParamField>
+
+<ParamField body="chunk_overlap" type="number" default="100">
+  Sets the chunk overlap if parse_url or content is set.
+</ParamField>
