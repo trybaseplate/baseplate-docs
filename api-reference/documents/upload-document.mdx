@@ -172,3 +172,14 @@ fetch(
   .then((result) => console.log(result))
   .catch((error) => console.log("error", error));
 ```
+
+### cURL
+
+```bash
+curl --location 'https://app.baseplate.ai/api/datasets/$DATASET_ID/upload' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer $BASEPLATE_API_KEY' \
+--form 'file=@"/path/to/file.txt"' \
+--form 'chunk_size="3000"' \
+--form 'chunk_overlap="50"'
+```
