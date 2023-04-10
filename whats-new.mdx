@@ -13,12 +13,18 @@ description: "Baseplate Changelog"
     </Frame>
 
 - Datasets
+
   - CSV file support
     <Warning>
       To import/upload CSV files, ensure the correct columns already exist in
       the dataset. If some columns in the csv are meant for metadata, ensure
       they exist as metadata columns.
     </Warning>
+  - Auto embed image columns
+    - Enabling auto embed on an image column will automatically generate a caption for the image and embed it.
+      <Frame>
+        <img src="/images/auto-embed.png" />
+      </Frame>
 
 - Security (Team plan)
   - Handle PII with confidence - we've added support for redacting, masking, or replacing detected PII.
