@@ -28,7 +28,9 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 </ParamField>
 
 <ParamField body="file" type="file" required>
-  Attach a file to the request form-data.
+  Attach a file to the request form-data. PDFs and csvs are automatically
+  parsed. For csv files, if you need certain cells to be added as metadata, make
+  sure the metadata columms already exist in the dataset.
 </ParamField>
 
 <ParamField body="document-id" type="string">
