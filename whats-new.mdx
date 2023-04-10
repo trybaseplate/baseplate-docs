@@ -3,13 +3,36 @@ title: "🍜 What's New?"
 description: "Baseplate Changelog"
 ---
 
+### **4/10/23**
+
+- Logging
+
+  - Better observability into your API calls. See number of error and OK requests.
+    <Frame>
+      <img src="/images/logging.png" />
+    </Frame>
+
+- Datasets
+  - CSV file support
+    <Warning>
+      To import/upload CSV files, ensure the correct columns already exist in
+      the dataset. If some columns in the csv are meant for metadata, ensure
+      they exist as metadata columns.
+    </Warning>
+
+- Security (Team plan)
+  - Handle PII with confidence - we've added support for redacting, masking, or replacing detected PII.
+  - Some included info types are SSNs, ICD9 codes, and credit card numbers. Let us know if theres one you'd like to see added.
+
 ### **3/28/23**
 
 - Self service sign up
+
   - No more waitlist! Log in with Google, Github, or email on the website
   - 7 day trial for all new users, then 35/month per seat
 
 - Hybrid search (Team plan)
+
   - New hybrid search powered by instructor-large and SPLADE embeddings
   - Configure alpha in your app to weight semantics vs keywords during search.
 
