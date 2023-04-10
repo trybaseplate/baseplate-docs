@@ -63,3 +63,112 @@ description: "Upload a document directly and specify chunk size/overlap, and met
 ```
 
 </Tab>
+
+### Examples
+
+Replace $DATASET_ID and $BASEPLATE_API_KEY with your own values.
+
+#### Python
+
+```python
+import requests
+import io
+url = "https://app.baseplate.ai/api/datasets/$DATASET_ID/upload"
+response = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+response.raise_for_status()
+
+payload={'chunk_size': '700',
+'chunk_overlap': '100',
+'document_id': 'test_document'}
+file_like_object = io.BytesIO(response.content)
+files=[
+  ('file',('file.txt',file_like_object,'application/text'))
+]
+headers = {
+  'Authorization': 'Bearer $BASEPLATE_API_KEY'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+print(response.text)
+```
+
+```python
+import requests
+
+url = "https://app.baseplate.ai/api/datasets/$DATASET_ID/upload"
+
+payload={'chunk_size': '700',
+'chunk_overlap': '100',
+'document_id': '$DOC_ID'}
+files=[
+  ('file',('file.txt',open('file.txt','rb'),'application/text'))
+]
+headers = {
+  'Authorization': 'Bearer $BASEPLATE_API_KEY'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+print(response.text)
+```
+
+### Node.js (Axios)
+
+```javascript
+var axios = require("axios");
+var FormData = require("form-data");
+var fs = require("fs");
+var data = new FormData();
+data.append("file", fs.createReadStream("/path/to/file.txt"));
+data.append("chunk_size", "3000");
+data.append("chunk_overlap", "50");
+
+var config = {
+  method: "post",
+  maxBodyLength: Infinity,
+  url: "https://app.baseplate.ai/api/datasets/$DATASET_ID/upload",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer $BASEPLATE_API_KEY",
+    ...data.getHeaders(),
+  },
+  data: data,
+};
+
+axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+
+### Javascript (Fetch)
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer $BASEPLATE_API_KEY");
+
+var formdata = new FormData();
+formdata.append("file", fileInput.files[0], "file.txt");
+formdata.append("chunk_size", "3000");
+formdata.append("chunk_overlap", "50");
+
+var requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: formdata,
+  redirect: "follow",
+};
+
+fetch(
+  "https://app.baseplate.ai/api/datasets/$DATASET_ID/upload",
+  requestOptions
+)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.log("error", error));
+```
