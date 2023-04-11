@@ -4,6 +4,13 @@ api: "POST https://app.baseplate.ai/api/datasets/{id}/upload"
 description: "Upload a document directly and specify chunk size/overlap, and metadata. Limit to 100MB uploads"
 ---
 
+{" "}
+
+<Warning>
+  The tester above and examples on the right side of this page will not work
+  since this API uses mutlipart form data. See bottom of page for examples.
+</Warning>
+
 ### Path Parameters
 
 <ParamField path="id" type="string" required>
@@ -85,7 +92,8 @@ files=[
   ('file',('file.txt',file_like_object,'application/text'))
 ]
 headers = {
-  'Authorization': 'Bearer $BASEPLATE_API_KEY'
+  'Authorization': 'Bearer $BASEPLATE_API_KEY',
+   'Content-Type': 'multipart/form-data'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, files=files)
@@ -105,7 +113,8 @@ files=[
   ('file',('file.txt',open('file.txt','rb'),'application/text'))
 ]
 headers = {
-  'Authorization': 'Bearer $BASEPLATE_API_KEY'
+  'Authorization': 'Bearer $BASEPLATE_API_KEY',
+  'Content-Type': 'multipart/form-data'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, files=files)
@@ -129,7 +138,7 @@ var config = {
   maxBodyLength: Infinity,
   url: "https://app.baseplate.ai/api/datasets/$DATASET_ID/upload",
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
     Authorization: "Bearer $BASEPLATE_API_KEY",
     ...data.getHeaders(),
   },
@@ -149,7 +158,7 @@ axios(config)
 
 ```javascript
 var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Content-Type", "multipart/form-data");
 myHeaders.append("Authorization", "Bearer $BASEPLATE_API_KEY");
 
 var formdata = new FormData();
@@ -177,7 +186,7 @@ fetch(
 
 ```bash
 curl --location 'https://app.baseplate.ai/api/datasets/$DATASET_ID/upload' \
---header 'Content-Type: application/json' \
+--header 'Content-Type: multipart/form-data' \
 --header 'Authorization: Bearer $BASEPLATE_API_KEY' \
 --form 'file=@"/path/to/file.txt"' \
 --form 'chunk_size="3000"' \
