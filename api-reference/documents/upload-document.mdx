@@ -23,6 +23,10 @@ description: "Upload a document directly and specify chunk size/overlap, and met
   Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
 </ParamField>
 
+<ParamField header="Content-Type" type="string" required>
+  Use multipart/form-data
+</ParamField>
+
 ### Body
 
 <ParamField body="chunk_size" type="number" default="1000">

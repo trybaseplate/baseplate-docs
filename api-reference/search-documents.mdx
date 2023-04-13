@@ -1,0 +1,48 @@
+---
+title: "Search Documents"
+description: "Full text search for documents in a dataset"
+api: "POST https://app.baseplate.ai/api/datasets/{id}/search-documents"
+---
+
+### Path Parameters
+
+<ParamField path="id" type="string" required>
+  Dataset ID
+</ParamField>
+
+### Header
+
+<ParamField path="Authorization" type="string">
+  Baseplate API key. Must be in the format "Bearer $BASEPLATE_API_KEY"
+</ParamField>
+
+### Body Parameters
+
+<ParamField body="query" type="string">
+  Query string
+</ParamField>
+
+<ParamField body="top_k" type="number">
+  Number of closest matches
+</ParamField>
+
+### Responses
+
+<Tab title="🟢 200: OK" >
+
+```json
+{
+    "results": [
+        {
+            "document_id": "fc74e81e-05ac-4df6-936f-ce51cc69a868",
+            "dataset_id": "e2fa7f7b-d580-4ecf-8232-a1131938a3fc",
+            "content": "",
+            "filename": "example.pdf",
+            "url": "/928f94ee-4c7c-451a-bf3c-f1baa08c67b0/example.pdf",
+            "similarity": 0.0919062
+        }
+    ]
+}
+```
+
+</Tab>
