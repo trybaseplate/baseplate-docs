@@ -55,7 +55,7 @@
         "api-reference/completions",
         "api-reference/search",
         "api-reference/search-documents",
-        "api-reference/hybrid-search",
+        "api-reference/document-filtered-search",
         {
           "group": "Logs & Human Feedback",
           "pages": [
