@@ -44,3 +44,7 @@ api: "POST https://app.baseplate.ai/api/datasets/{id}/documents"
 <ParamField body="chunk_overlap" type="number" default="100">
   Sets the chunk overlap if parse_url or content is set.
 </ParamField>
+
+<ParamField body="metadata" type="object">
+  Metadata to add to every row in the document. Optional.
+</ParamField>
