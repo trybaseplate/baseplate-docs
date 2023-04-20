@@ -18,7 +18,7 @@ api: "POST https://app.baseplate.ai/api/datasets/{id}/document-filtered-search"
 
 ### Body Parameters
 
-<ParamField body="query" type="string">
+<ParamField body="query" type="string" required>
   Query string
 </ParamField>
 
@@ -26,7 +26,7 @@ api: "POST https://app.baseplate.ai/api/datasets/{id}/document-filtered-search"
   Number of documents to use in embedding search filter.
 </ParamField>
 
-<ParamField body="top_k_rows" type="number">
+<ParamField body="top_k_rows" type="number" default="3">
   Number of documents to use in embedding search filter.
 </ParamField>
 
