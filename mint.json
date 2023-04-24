@@ -96,6 +96,7 @@
       ]
     }
   ],
+  "backgroundImage": "images/bg.png",
   "footerSocials": {
     "twitter": "https://twitter.com/trybaseplate",
     "linkedin": "https://www.linkedin.com/company/trybaseplate/"
