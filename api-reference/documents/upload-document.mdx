@@ -42,6 +42,10 @@ description: "Upload a document directly and specify chunk size/overlap, and met
   Attach a file to the request form-data. PDFs and csvs are automatically
   parsed. For csv files, if you need certain cells to be added as metadata, make
   sure the metadata columms already exist in the dataset.
+  <Warning>
+    For csv files, make sure there is a column named "text", or else no
+    embeddings will be generated. This column is the one you want embedded.
+  </Warning>
 </ParamField>
 
 <ParamField body="document-id" type="string">
