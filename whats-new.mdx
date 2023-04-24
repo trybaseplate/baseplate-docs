@@ -3,6 +3,26 @@ title: "🍜 Changelog"
 description: "Baseplate Changelog"
 ---
 
+### **4/24/23**
+
+- Document Search
+
+  - Two new endpoints for searching documents
+    - `POST /api/datasets/{id}/search-documents` - search documents with traditional keyword based search
+    - `POST /api/datasets/{id}/document-filtered-search` - equivalent to search documents followed by a /search using the relevant documents as a metadata filter
+
+- Slack & Discord deployments
+
+  - Deploy an endpoint directly to a Slack workspace or Discord server in the deployments page!
+  - Due to the nature of Slack & Discord apps, only one endpoint can be deployed at a time per workspace/server
+
+- Misc
+  - SSO support for Pro plan
+  - Endpoint caching should improve endpoint performance
+  - Security (PII protection) now available on all plans!
+  - All filter types supported in App builder
+  - Multiple URL upload
+
 ### **4/10/23**
 
 - Logging
