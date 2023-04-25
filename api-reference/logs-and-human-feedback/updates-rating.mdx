@@ -26,12 +26,6 @@ description:
 
 ### Body
 
-<ParamField body="positive_rating" type="Boolean">
-  True indicates a positive rating (thumbs up)
-</ParamField>
-<ParamField body="usage_id" type="">
-  The usage ID, which is returned when calling the completions endpoint
-</ParamField>
 <ParamField body="logs" type="Array">
   Array of logs to batch update. Each object should contain a positive_rating
   and usage_id. Either "logs" or "positive_rating + "usage_id" is required.
