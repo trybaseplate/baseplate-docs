@@ -1,0 +1,72 @@
+---
+title: "List Logs"
+api: "GET https://app.baseplate.ai/endpoints/{id}/logs"
+description: "Lists logs, sorted by most recent."
+---
+
+## Parameters
+
+### Path
+
+<ParamField path="id" type="string" required>
+  Baseplate endpoint ID
+</ParamField>
+
+### Header
+
+<ParamField header="Authorization" type="string" required>
+  Baseplate API key. Needs to be in the format "Bearer &BASEPLATE_API_KEY"
+</ParamField>
+<ParamField header="Content-Type" type="string">
+  Use application/json
+</ParamField>
+
+### Body
+
+<ParamField body="page" type="number" default="1">
+  Page number for pagination. Starts at 1.
+</ParamField>
+
+<ParamField body="page_size" type="number" default="50">
+  Page size for pagination.
+</ParamField>
+
+<Tabs>
+<Tab title="🟢 200: OK">
+
+```json
+[
+  {
+    "id": "1ab444b6-adff-4347-967a-fa86590ec61f",
+    "user_id": "20af31df-3a61-419a-ac46-2678561a761e",
+    "endpoint_id": "a99d0cec-4f4d-4ea5-9ba2-0bf818e71ac0",
+    "timestamp": {
+      "value": "2023-04-05T21:16:08.338Z"
+    },
+    "model": "gpt-3.5-turbo",
+    "prompt": "[{\"role\":\"user\",\"content\":\"Hello.\"}]",
+    "completion": "Hi!",
+    "positive_rating": null,
+    "values": null,
+    "search_results": "[{\"confidence\":0.729523659,\"data\":{\"text\":\"embedding\"},\"embedding\":\"changed embedding\",\"image_paths\":null,\"metadata\":{\"documentId\":\"text\",\"rowId\":218963,\"url\":\"/5274962e-04c3-4a23-b3d5-1d7e1ea6a230/test.pdf\"},\"query\":\"Hello.\",\"variable\":\"context_2\"}]",
+    "status": "{\"status\":200}",
+    "deployment_id": 27,
+    "latency": null
+  }
+]
+```
+
+</Tab>
+
+<Tab title="🟠 401: Unauthorized">
+
+Unauthorized for project or invalid API key.
+
+```json
+{
+  // Response
+}
+```
+
+</Tab>
+</Tabs>

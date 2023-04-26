@@ -60,7 +60,8 @@
           "group": "Logs & Human Feedback",
           "pages": [
             "api-reference/logs-and-human-feedback/updates-rating",
-            "api-reference/logs-and-human-feedback/add-comment"
+            "api-reference/logs-and-human-feedback/add-comment",
+            "api-reference/logs-and-human-feedback/list-logs"
           ]
         },
 
