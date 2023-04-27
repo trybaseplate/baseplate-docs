@@ -1,14 +1,111 @@
 ---
 title: "📈 Use Cases"
-description: "(Guides Coming Soon)"
+description: "Ways Our Users Use Baseplate"
 ---
+This page contains a high-level overview of a few apps you can build with Baseplate. Baseplate is a platform for building YOUR AI, so feel free to get creative and tailor it to your ideal use case! 
 
-### Intelligent Assistant connected to External Data Sources
+<Info> For step-by-step instructions for a particular use case, ask questions in our Discord our reach out directly via email! </Info>
 
-Team Acme wants to build an LLM app that can analyze and respond with content
-from a team's meeting transcripts, Google Calendar, Google Docs, and Salesforce.
+## Customer Support
+A common and valuable use case for retrieval-based LLM apps is engaging your customers when they have questions. An AI application is always available, and given the right context, will accurately answer questions about your products. 
 
-### Research Assistant Connected to Large Dataset
+With Baseplate you can build a custom support app that fits into your workflow. 
 
-Team Acme wants to build an LLM app that can answer detailed questions and cite
-sources about a large dataset of Legal Documents
+<Note>Like to add emojis in your responses? Want to base answers on previous conversations your support agents have had? Want a human in the loop? Tell us in your system message. </Note>
+
+<Tip> Through prompting, Baseplate apps can even respond with "I don't know" when the proper information is missing in your datasets. </Tip>
+
+#### Implementation Suggestions
+<CardGroup cols={3}>
+<Card title="Datasets" icon="square-1" color="#ea5a0c">
+Product documentation and conversation history.
+</Card>
+  <Card title="App" icon="square-2" color="#0285c7">
+   Multi-step semantic search and voice/tone guidance.
+  </Card>
+  <Card title="Deployment" icon="square-3" color="#16a34a">
+    Slack, Discord, Intercom, etc. 
+  </Card>
+</CardGroup>
+
+
+## AI Teaching Assistant
+LLMs can be used to make educational content more engaging and accessible for students. With Baseplate, you can connect your course content and have an AI help you teach.
+
+<Tip> Baseplate AI Apps can respond with images. For visual learners, this is a must have. For more info, check out our APIs. </Tip>
+
+Our customers have built apps that
+1. Explain course content and review material with students
+2. Personalize assignments to individuals
+3. Recommend readings or next steps
+4. Grade assignments and tests
+
+#### Implementation Suggestions
+<CardGroup cols={3}>
+<Card title="Datasets" icon="square-1" color="#ea5a0c">
+Course content, lecture slides, readings, assignments
+</Card>
+  <Card title="App" icon="square-2" color="#0285c7">
+Multi-step semantic search, course progress variables, student profiles
+  </Card>
+  <Card title="Deployment" icon="square-3" color="#16a34a">
+Deploy via API within the course platform
+  </Card>
+</CardGroup>
+
+## AI Knowledge Hub
+Retrieval-based LLM apps are great at finding relevant content and synthesizing large amounts of information. Instead of searching through Google Drive, find and utilize the most relevant content through a simple chat interface.
+
+<Tip> Apps on Baseplate are always able to cite sources and provide links to source material. </Tip>
+
+Why is this important?
+1. This can speed up onboarding of new teammembers
+2. Help you leverage your collective knowledge and experience better
+3. Prepare you for important meetings or presentations
+
+#### Implementation Suggestions
+<CardGroup cols={3}>
+<Card title="Datasets" icon="square-1" color="#ea5a0c">
+Meeting transcripts, Documents, Case Studies, and anything else you have. 
+</Card>
+  <Card title="App" icon="square-2" color="#0285c7">
+Simple Q/A prompt, variables to filter search results
+  </Card>
+  <Card title="Deployment" icon="square-3" color="#16a34a">
+Deploy via API within your teams intranet, or as a Slack bot
+  </Card>
+</CardGroup>
+
+## Proposals / Contracts Assistant
+LLMs can be integral parts of your workflows relating to proposals and contracts. Received an RFP from a potential customer? A Baseplate app can help draft a Q/A document based on your previous work. It can then use answers from your Q/A document to draft a proposal.
+
+<Tip> Use our Document Retrieval APIs to find relevant documents, or our search APIs to find relevant chunks of documents.</Tip>
+
+#### Implementation Suggestions
+<CardGroup cols={3}>
+<Card title="Datasets" icon="square-1" color="#ea5a0c">
+Previous proposals, Q/A documents, & product documentation
+</Card>
+  <Card title="App" icon="square-2" color="#0285c7">
+Multi-step semantic search, Document Retrieval, Current State
+  </Card>
+  <Card title="Deployment" icon="square-3" color="#16a34a">
+Deploy via API within your teams intranet, or as a Slack bot
+  </Card>
+</CardGroup>
+
+## E-Commerce Shopping Guide
+Want to help your customers find the most relevant products? Turn your search bar into an AI shopping assistant.
+
+#### Implementation Suggestions
+<CardGroup cols={3}>
+<Card title="Datasets" icon="square-1" color="#ea5a0c">
+Product catalog (descriptions, images, names, etc.)
+</Card>
+  <Card title="App" icon="square-2" color="#0285c7">
+Simple Q/A chat bot 
+</Card>
+  <Card title="Deployment" icon="square-3" color="#16a34a">
+Deploy via API within your store's webpage.
+  </Card>
+</CardGroup>
