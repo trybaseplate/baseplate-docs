@@ -9,7 +9,7 @@ description:
 ## Generates a completion
 
 Generates a completion from endpoint {id}. Your endpoint ID can be found in the
-API tab of your endpoint or in the URL. 
+API tab of your endpoint or in the URL.
 
 ## Parameters
 
@@ -34,10 +34,12 @@ API tab of your endpoint or in the URL.
   A json object with keys matching the variables of your deployed template.
 </ParamField>
 <ParamField body="prompt" type="array">
-  A prompt for Anthropic, ada, babbage, curie, and davinci models. One of messages or prompt is required.
+  A prompt for Anthropic, ada, babbage, curie, and davinci models. One of
+  messages or prompt is required.
 </ParamField>
 <ParamField body="messages" type="array">
-  An array of the chat history, for gpt-3.5 and gpt-4 models. One of messages or prompt is required.
+  An array of the chat history, for gpt-3.5 and gpt-4 models. One of messages or
+  prompt is required.
 </ParamField>
 <ParamField body="stream" type="boolean">
   If true, response will be sent back as Server Sent Events. A [DONE] message is
@@ -68,6 +70,24 @@ API tab of your endpoint or in the URL.
     "completion_tokens": 16,
     "total_tokens": 39
   },
+  "search_results": [
+    {
+      "data": {
+        "text": "Example text."
+      },
+      "embedding": "Example text.",
+      "image_paths": null,
+      "confidence": 0.84870479,
+      "metadata": {
+        "documentId": "007c8ab6-4972-4457-9a1b-244fdefb22bc",
+        "rowId": 571724,
+        "url": "/5274962e-04c3-4a23-b3d5-1d7e1ea6a230/text.pdf"
+      },
+      "variable": "context",
+      "last_accessed": "2023-05-03T00:03:40.525+00:00",
+      "query": "example query"
+    }
+  ],
   "prompt_cost": 0.00046,
   "completion_cost": 0.00032,
   "baseplate_model_name": "text-davinci-003"
