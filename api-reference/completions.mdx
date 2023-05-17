@@ -110,3 +110,107 @@ Unauthorized for project or invalid API key.
 
 </Tab>
 </Tabs>
+
+### Steaming Example (Next.js 13)
+
+Heres an example if you are using NextJS 13/React:
+
+Backend (/api/completions/chat/route.ts):
+
+```
+import {
+  createParser,
+  ParsedEvent,
+  ReconnectInterval,
+} from "eventsource-parser";
+
+export async function POST(request: Request) {
+const body = await request.json();
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+const res = await fetch("https://app.baseplate.ai/api/endpoints/${endpoint-id}/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.BASEPLATE_API_KEY}`,
+    },
+    body: JSON.stringify({
+      messages: [body.messages],
+      stream: true,
+    }),
+  });
+  const stream = new ReadableStream({
+    async start(controller) {
+      // callback
+      function onParse(event: ParsedEvent | ReconnectInterval) {
+        if (event.type === "event") {
+          const data = event.data;
+          // https://beta.openai.com/docs/api-reference/completions/create#completions/create-stream
+          if (data === "[DONE]") {
+            controller.close();
+            return;
+          }
+          try {
+            const json = JSON.parse(data);
+            const text =
+              json.choices[0].delta?.content || json.choices[0].text || "";
+            const queue = encoder.encode(text);
+            controller.enqueue(queue);
+          } catch (e) {
+            // maybe parse error
+            controller.error(e);
+          }
+        }
+      }
+
+      // stream response (SSE) from OpenAI may be fragmented into multiple chunks
+      // this ensures we properly read chunks and invoke an event for each SSE event stream
+      const parser = createParser(onParse);
+      // https://web.dev/streams/#asynchronous-iteration
+      for await (const chunk of res.body as any) {
+        parser.feed(decoder.decode(chunk));
+      }
+    },
+  });
+  return new Response(stream);
+}
+```
+
+Front end (inside some function):
+```
+try {
+      res = await fetch(`/api/completions/chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: [{role: "user", content: "Hello"}],
+        }),
+      }).catch((err) => {
+        throw err;
+      });
+    } catch (e: any) {
+      console.error(e);
+      return;
+    }
+    setGenerating(false);
+    if (!res.ok) {
+      const error = await res.json();
+      console.error(`Error generating: ${error.message}`);
+      return;
+    }
+    const stream = res.body;
+    if (!stream) {
+      return;
+    }
+    const reader = stream.getReader();
+    const decoder = new TextDecoder();
+    let done = false;
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      done = doneReading;
+      const chunkValue = decoder.decode(value);
+      console.log(chunkValue);
+    }
+```
