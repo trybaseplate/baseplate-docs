@@ -31,7 +31,7 @@ API tab of your endpoint or in the URL.
 ### Body
 
 <ParamField body="values" type="json">
-  A json object with keys matching the variables of your deployed template.
+  A json object with keys matching the variables of your deployed template
 </ParamField>
 <ParamField body="prompt" type="array">
   A prompt for Anthropic, ada, babbage, curie, and davinci models. One of
@@ -177,6 +177,7 @@ const res = await fetch("https://app.baseplate.ai/api/endpoints/${endpoint-id}/c
 ```
 
 Front end (inside some function):
+
 ```
 try {
       res = await fetch(`/api/completions/chat`, {
