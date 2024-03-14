@@ -52,6 +52,7 @@
       "group": "API",
       "pages": [
         "api-reference/completions",
+        "api-reference/completions-2",
         "api-reference/search",
         "api-reference/search-documents",
         "api-reference/document-filtered-search",
@@ -94,7 +95,6 @@
         "fancy-stuff/training--alpha",
         "fancy-stuff/sync-with-github--alpha",
         "fancy-stuff/playground"
-
       ]
     }
   ],
